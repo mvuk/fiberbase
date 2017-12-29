@@ -1,4 +1,4 @@
-paragma solidity ^0.4.16
+pragma solidity ^0.4.15;
 
 //describes the whole program
 contract FiberContract {
@@ -6,14 +6,13 @@ contract FiberContract {
   string ipfsHash;
   string title;
 
-  function set(string x, string y) {
-    ipfsHash = x;
-    title = y;
+  function set(string _ipfsHash, string _title) {
+    ipfsHash = _ipfsHash;
+    title = _title;
   }
 
-  function get() constant returns (string x, string y) {
-    return ipfsHash;
-    return title;
+  function get() constant returns (string _ipfsHash, string _title) {
+    return (ipfsHash, title);
   }
 
 }
