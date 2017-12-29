@@ -1,5 +1,7 @@
 # fiberbase
 
+Host files on IPFS and manage directory through Ethereum blockchain
+
 ### What we have done
 1. Setup IPFS and understand how it works
 2. Upload content to IPFS (video and image)
