@@ -16,18 +16,24 @@ contract FiberContract {
   // set the variables
   string ipfsHash;
   string title;
+  uint weight;
+  bool owner;
 
 
   // inputs, one single contract asks for IPFS hash and title
-  function set(string _ipfsHash, string _title) {
+  function set(string _ipfsHash, string _title, bool owner) {
     ipfsHash = _ipfsHash;
     title = _title;
+    owner = true;
   }
 
   // display the result as a pair
   function get() returns (string _ipfsHash, string _title) {
-
+  if(owner = true){
     return (ipfsHash, title);
+  }else {
+    revert();
+  }
   }
 
 }
