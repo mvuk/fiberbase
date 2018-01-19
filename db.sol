@@ -14,10 +14,9 @@ contract owned {
 contract FiberContract {
 
   // set the variables
-  string ipfsHash;
-  string title;
-  uint weight;
-  bool owner;
+  string public ipfsHash;
+  string public title;
+  bool public owner;
 
 
   // inputs, one single contract asks for IPFS hash and title
