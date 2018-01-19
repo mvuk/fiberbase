@@ -27,7 +27,7 @@ contract FiberContract {
   }
 
   // display the result as a pair
-  function get() returns (string _ipfsHash, string _title) {
+  function get() public returns (string _ipfsHash, string _title) {
   if(owner = true){
     return (ipfsHash, title);
   }else {
