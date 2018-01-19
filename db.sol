@@ -9,23 +9,24 @@ contract owned {
   }
 }
 
-
 //describes the whole program
 contract FiberContract {
+
+// multivariable structure class
 struct HashTable {
-  // set the variables
   string  ipfsHash;
   string  title;
 }
 
+// create array based on HasTable structure
 HashTable[] public dbTable;
 address public owner = msg.sender;
 
   // inputs, one single contract asks for IPFS hash and title
   function AddHash(string _ipfsHash, string _title) {
     require(msg.sender == owner);
+    // append to the array
     dbTable.push(HashTable(_ipfsHash, _title));
   }
 
-
-  }
+}
