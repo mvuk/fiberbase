@@ -12,27 +12,20 @@ contract owned {
 
 //describes the whole program
 contract FiberContract {
-
+struct HashTable {
   // set the variables
-  string public ipfsHash;
-  string public title;
-  bool public owner;
+  string  ipfsHash;
+  string  title;
+}
 
+HashTable[] public dbTable;
+address public owner = msg.sender;
 
   // inputs, one single contract asks for IPFS hash and title
-  function set(string _ipfsHash, string _title, bool owner) {
-    ipfsHash = _ipfsHash;
-    title = _title;
-    owner = true;
+  function AddHash(string _ipfsHash, string _title) {
+    require(msg.sender == owner);
+    dbTable.push(HashTable(_ipfsHash, _title));
   }
 
-  // display the result as a pair
-  function get() public returns (string _ipfsHash, string _title) {
-  if(owner = true){
-    return (ipfsHash, title);
-  }else {
-    revert();
-  }
-  }
 
-}
+  }
